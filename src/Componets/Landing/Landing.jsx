@@ -1,16 +1,19 @@
 import React from 'react'
-import imgLanding from '../../Imges/Rick&Morty.jpg'
-import estilos from './landing.module.css'
 import { NavLink } from 'react-router-dom'
+//styles
+import "../../styles/landing.css"
 
 const Landing = () => {
 return (
-    <>
-			<img className={estilos.fondo} src={imgLanding} alt={'background'}/>
-      <NavLink to={"/home"}>
-        <button>Go to another dimension</button>
-      </NavLink>
-		</>
+    <div className='wallpaper'>
+      <div className="landing">
+        <h1>WELCOME TO RICK AND MORTY WEB</h1>
+          <br />
+          <NavLink to="/home">
+            <button className="buttonGo"> GO TO ANOTHER DIMENSION </button>
+          </NavLink>
+      </div>
+    </div>
   )
 }
 

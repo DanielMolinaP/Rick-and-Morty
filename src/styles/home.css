@@ -1,0 +1,10 @@
+.wallpaperHome {
+    background-image:linear-gradient(rgb(5, 7, 12), rgba(5, 7, 12, 0.75)), url("../Imges/rick-and-morty-toxic-rick-green-wallpaper-scaled.jpg"); 
+    background-size: 100%; /* contain, cover,auto;*/
+    background-position: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    min-height: 100vh;
+    height: 100%;
+    /* background-size: cover; */
+}

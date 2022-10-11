@@ -1,37 +1,40 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { getPrevious, getNext, getAllInfo1} from '../../Redux/Actions/index.js'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getPrevious, getNext } from '../../Redux/Actions/index.js'
 
 const Pagination = () => {
-
-  const infoRedux = useSelector(state => state.info)
+  const infoRedux = useSelector((state) => state.info)
   const { prev, next } = infoRedux
   const dispatch = useDispatch()
 
-  const onPrevious = () =>{
+  const onPrevious = () => {
     dispatch(getPrevious(prev))
-    dispatch(getAllInfo1(prev))
   }
-  const onNext = () =>{
+  
+  const onNext = () => {
     dispatch(getNext(next))
-    dispatch(getAllInfo1(next))
   }
   return (
-    <nav>
-      <ul className='pagination'>
-        {
-          prev ? 
-          <li className='item'>
-            <button className='button' onClick={onPrevious}>Previous</button>
-          </li> : null
-        }
-        {
-          next ?
-          <li className='item'>
-            <button className='button' onClick={onNext}>Next</button>
-          </li>: null
-        }
+    <nav className='my-5'>
+      <ul className="pagination justify-content-center">
+        {prev ? (
+          <li className="page-item">
+            <button className="page-link" onClick={onPrevious}>
+              Previous
+            </button>
+          </li>
+        ) : (
+          <button className="page-link">Previous</button>
+        )}
+        {next ? (
+          <li className="page-item">
+            <button className="page-link" onClick={onNext}>
+              Next
+            </button>
+          </li>
+        ) : (
+          <button className="page-link">Next</button>
+        )}
       </ul>
     </nav>
   )

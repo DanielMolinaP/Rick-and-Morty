@@ -5,54 +5,24 @@ import { useSelector } from 'react-redux'
 const Characters = () => {
 
   const characterRedux = useSelector(state => state.characters)
-
+  
   return (
-    <div className='row'>
-      {characterRedux.map((item,index) => (
-          <div key={index} className='col'>
-            <div className='card'>
-              <img src={item.image} alt='character'/>
-              <div className='body-card'>
-                <p>{item.name}</p>
-                <p>{item.species}</p>
-                <p>{item.origin.name}</p>
-                <p>{item.status}</p>
-                <p>{item.location.name}</p>
-              </div>
+    <div className="row justify-content-center">
+        {characterRedux.map((item,index) => (
+            <div key={index} className="col mb-4">
+                <div className='card' style={{maxWidth:'300px'}}>
+                <img src={item.image} alt='imagen'/>
+                <div className='card-boby'>
+                  <h5 className='card-title'>{item.name}</h5>
+                  <hr/>
+                  <p>Location: {item.location.name}</p>
+                  <p>Species: {item.species}</p>
+                  </div>
+                </div>
             </div>
-          </div>
-        ))}
+          ))}
     </div>
   )
 }
 
 export default Characters
-
-
-
-
-// const Characters = ({characters}) => {
-
-  
-
-//   return (
-//     <div className='row'>
-//       {characters.map((item,index) => (
-//           <div key={index} className='col'>
-//             <div className='card'>
-//               <img src={item.image} alt='character'/>
-//               <div className='body-card'>
-//                 <p>{item.name}</p>
-//                 <p>{item.species}</p>
-//                 <p>{item.origin.name}</p>
-//                 <p>{item.status}</p>
-//                 <p>{item.location.name}</p>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//     </div>
-//   )
-// }
-
-// export default Characters

@@ -1,13 +1,15 @@
 import React from 'react'
 
 const Navbar = () => {
-    return (
-        <>
-            <nav className='nav'>
-            <h1>RICK AND MORTY APP</h1>
-            </nav>
-        </>
-    )
+  return (
+    <nav className="navbar navbar-dark bg-dark">
+      <div className="container">
+        <a className="navbar-brand" href="/">
+          RICK AND MORTY APP
+        </a>
+      </div>
+    </nav>
+  )
 }
 
 export default Navbar

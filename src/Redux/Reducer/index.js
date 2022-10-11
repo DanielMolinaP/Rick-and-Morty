@@ -1,42 +1,46 @@
 // Importa las action types acá
-import { GET_ALL_CHARACTERS, GET_INFO, GET_INFO1, GET_PREVIOUS, GET_NEXT } from '../Actions/index.js'
+import {
+  GET_ALL_CHARACTERS,
+  GET_BY_NAME,
+  GET_ALL_CHARACTERS_PREVIOUS,
+  GET_ALL_CHARACTERS_NEXT,
+} from '../Actions/index.js'
 
 const initialState = {
-	characters: [],
-	info: {},
-};
+  characters: [],
+  info: {},
+}
 
 const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-			case GET_ALL_CHARACTERS:
-				return{
-					...state,
-					characters: action.payload
-					//characters: state.characters.concat(action.payload)
-				}
-			case GET_INFO:
-				return{
-					...state,
-					info: action.payload
-				}
-			case GET_INFO1:
-				return{
-					...state,
-					info: action.payload
-					}
-			case GET_PREVIOUS:
-				return{
-					...state,
-					characters:action.payload
-				}
-			case GET_NEXT:
-				return{
-					...state,
-					characters:action.payload
-				}
-				default:
-					return state
+  switch (action.type) {
+    case GET_ALL_CHARACTERS:
+      return {
+        ...state,
+        characters: action.payload.results,
+        info: action.payload.info,
+        //characters: state.characters.concat(action.payload)
+      }
+    case GET_ALL_CHARACTERS_NEXT:
+      return {
+        ...state,
+        characters: action.payload.results,
+        info: action.payload.info,
+      }
+    case GET_ALL_CHARACTERS_PREVIOUS:
+      return {
+        ...state,
+        characters: action.payload.results,
+        info: action.payload.info,
+      }
+    case GET_BY_NAME:
+      return {
+        ...state,
+        characters: action.payload.results,
+        info: action.payload.info,
+      }
+    default:
+      return state
+  }
 }
-};
 
-export default rootReducer;
+export default rootReducer

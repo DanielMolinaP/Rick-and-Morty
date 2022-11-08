@@ -35,7 +35,7 @@ const Footer = () => {
             >
               <img src={linkin} height="45px" width="45px"></img>
             </a>
-            <a href="https://github.com/masterchip14" target="_blank">
+            <a href="https://github.com/DanielMolinaP" target="_blank">
               <img src={github} height="45px" width="55px"></img>
             </a>
           </div>
